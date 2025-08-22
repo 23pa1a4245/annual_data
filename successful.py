@@ -10,13 +10,13 @@ import json
 
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = os.environ.get("SECRET_KEY","default_secret")
 
 DB_CONFIG = {
-    'host': os.environ.get('http://gateway01.ap-southeast-1.prod.aws.tidbcloud.com'),
-    'user': '2tJ2hbMoj1vsu2d.root',
-    'password': 'sYvHNm8s96kZnXQN',
-    'database': 'newproject',
+    'host': os.environ.get('DH_HOST'),
+    'user': os.environ.get('DB_USER'),
+    'password': os.environ.get('DB_PASS'),
+    'database': os.environ.get('DB_NAME'),
 }
 
 pool = pooling.MySQLConnectionPool(pool_name="mypool", pool_size=5, **DB_CONFIG)
