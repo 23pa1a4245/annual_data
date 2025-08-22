@@ -13,9 +13,9 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'lucky',
+    'host': 'http://gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
+    'user': '2tJ2hbMoj1vsu2d.root',
+    'password': 'sYvHNm8s96kZnXQN',
     'database': 'newproject',
 }
 
@@ -6349,4 +6349,4 @@ def get_all_faculty_details():
             conn.close()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=4000)
